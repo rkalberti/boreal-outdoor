@@ -1,0 +1,416 @@
+
+/* ========================================
+   BOREAL OUTDOOR - IDENTIDADE VISUAL
+======================================== */
+
+:root {
+    --verde-escuro: #17251e;
+    --verde-musgo: #344b38;
+    --verde-claro: #607b4e;
+    --laranja: #d97732;
+    --fundo: #e9ece5;
+    --branco: #ffffff;
+    --texto: #252d27;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   CABEÇALHO E NAVEGAÇÃO
+======================================== */
+
+header {
+    width: 100%;
+}
+
+.navbar {
+    background-color: var(--verde-escuro) !important;
+    min-height: 110px;
+    padding: 10px 5%;
+    border-bottom: 4px solid var(--laranja);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.navbar-brand img {
+    height: 85px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar-nav {
+    gap: 15px;
+}
+
+.navbar .nav-link {
+    color: #e5e9e3 !important;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    padding: 12px 18px !important;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-item.active .nav-link {
+    color: var(--laranja) !important;
+}
+
+.navbar .dropdown-menu {
+    background-color: var(--verde-escuro);
+    border: 1px solid var(--verde-claro);
+}
+
+.navbar .dropdown-item {
+    color: white;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: var(--verde-musgo);
+    color: white;
+}
+
+.navbar .btn-light {
+    background-color: var(--laranja);
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+/* ========================================
+   ÁREA PRINCIPAL
+======================================== */
+
+main {
+    flex: 1;
+    padding: 55px 20px;
+    background:
+        linear-gradient(rgba(23, 37, 30, 0.75),
+        rgba(23, 37, 30, 0.75)),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920")
+        center/cover fixed;
+}
+
+/* ========================================
+   FORMULÁRIO DE CADASTRO
+======================================== */
+
+#form_cadastro {
+    background-color: rgba(255, 255, 255, 0.97);
+    width: 100%;
+    max-width: 480px;
+    padding: 40px 45px;
+    border-radius: 12px;
+    border-top: 6px solid var(--laranja);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* TÍTULO */
+
+#form_cadastro h1 {
+    color: var(--verde-escuro);
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#form_cadastro h1::after {
+    content: "BOREAL OUTDOOR";
+    display: block;
+    font-size: 12px;
+    color: var(--laranja);
+    letter-spacing: 3px;
+    margin-top: 8px;
+}
+
+/* LABELS */
+
+#form_cadastro label {
+    color: var(--verde-escuro);
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 17px;
+    margin-bottom: 7px;
+}
+
+/* CAMPOS */
+
+.input_texto {
+    width: 100%;
+    height: 44px;
+    padding: 10px 13px;
+    border: 1px solid #cbd2c9;
+    border-radius: 6px;
+    background-color: #f7f8f5;
+    color: var(--texto);
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input_texto:focus {
+    border-color: var(--verde-musgo);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(52, 75, 56, 0.15);
+}
+
+/* BOTÃO */
+
+.btn_enviar {
+    margin-top: 30px;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--verde-musgo);
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn_enviar:hover {
+    background-color: var(--laranja);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn_enviar:disabled {
+    background-color: #777;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   TOAST / ALERTAS
+======================================== */
+
+.toast {
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    min-height: 65px;
+    background-color: var(--verde-escuro);
+    border-top: 3px solid var(--laranja);
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .navbar-brand {
+        margin-right: 0;
+    }
+
+    .navbar-brand img {
+        height: 65px;
+    }
+
+    .navbar-nav {
+        gap: 0;
+        padding-top: 15px;
+    }
+
+    main {
+        padding: 35px 15px;
+        background-attachment: scroll;
+    }
+
+    #form_cadastro {
+        padding: 30px 25px;
+        max-width: 420px;
+    }
+
+    #form_cadastro h1 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #form_cadastro {
+        padding: 25px 18px;
+    }
+
+    .input_texto {
+        height: 42px;
+    }
+}
+
+
+/* ========================================
+   BOREAL OUTDOOR - TELA DE LOGIN
+======================================== */
+
+/* FORMULÁRIO */
+
+#form_login {
+    background-color: rgba(255, 255, 255, 0.97);
+    width: 100%;
+    max-width: 440px;
+    padding: 45px 40px;
+    border-radius: 12px;
+    border-top: 6px solid var(--laranja);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* TÍTULO */
+
+#form_login h1 {
+    color: var(--verde-escuro);
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#form_login h1::after {
+    content: "BOREAL OUTDOOR";
+    display: block;
+    font-size: 12px;
+    color: var(--laranja);
+    letter-spacing: 3px;
+    margin-top: 8px;
+}
+
+/* LABELS */
+
+#form_login label {
+    color: var(--verde-escuro);
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+/* CAMPOS DE TEXTO */
+
+#form_login .input_texto {
+    width: 100%;
+    height: 46px;
+    padding: 10px 13px;
+    border: 1px solid #cbd2c9;
+    border-radius: 6px;
+    background-color: #f7f8f5;
+    color: var(--texto);
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#form_login .input_texto:focus {
+    border-color: var(--verde-musgo);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(52, 75, 56, 0.15);
+}
+
+/* LINK DE CADASTRO */
+
+#form_login p {
+    margin-top: 25px;
+    margin-bottom: 0;
+    color: #555f57;
+    font-size: 14px;
+}
+
+#form_login p a {
+    color: var(--laranja);
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#form_login p a:hover {
+    color: var(--verde-musgo);
+    text-decoration: underline;
+}
+
+/* BOTÃO ENTRAR */
+
+#form_login .btn_enviar {
+    margin-top: 25px;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--verde-musgo);
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#form_login .btn_enviar:hover {
+    background-color: var(--laranja);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+#form_login .btn_enviar:disabled {
+    background-color: #777;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    #form_login {
+        max-width: 420px;
+        padding: 35px 25px;
+    }
+
+    #form_login h1 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 400px) {
+    #form_login {
+        padding: 30px 18px;
+    }
+}
